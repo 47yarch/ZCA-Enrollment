@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zinah Christian Academy — Enrollment</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- ══ NAVBAR ══════════════════════════════════════════════════════════ -->
+<nav id="navbar">
+  <a href="index.html" class="nav-brand">
+    <img src="images/logo.png" alt="ZCA Logo">
+    <div class="nav-brand-text">
+      <span class="nav-brand-name">Zinah Christian Academy</span>
+      <span class="nav-brand-tagline">Shaping Bright Futures with Christ-centered Approach</span>
+    </div>
+  </a>
+
+  <div class="nav-links">
+    <a href="index.html#home">Home</a>
+    <a href="index.html#about">About</a>
+
+    <div class="nav-dropdown">
+      <a href="#">Curriculum ▾</a>
+      <div class="nav-dropdown-content">
+        <a href="index.html#curriculum-section">Curriculum Overview</a>
+        <a href="index.html#curriculum-section">Enrichment Subjects</a>
+        <a href="index.html#curriculum-section">Character and Life Skills</a>
+        <div class="nav-subdropdown">
+          <a href="#">Core Academic Subjects ▸</a>
+          <div class="nav-subdropdown-content">
+            <a href="index.html#curriculum-section">English / Language Arts</a>
+            <a href="index.html#curriculum-section">Mathematics</a>
+            <a href="index.html#curriculum-section">Science</a>
+            <a href="index.html#curriculum-section">Social Studies</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <a href="index.html#mission-vision">Mission &amp; Vision</a>
+    <a href="index.html#events">Events</a>
+    <a href="index.html#calendar">Calendar</a>
+
+    <div class="nav-dropdown">
+      <a href="#">More ▾</a>
+      <div class="nav-dropdown-content">
+        <a href="index.html#more-section">School Facilities</a>
+        <a href="index.html#more-section">Uniform</a>
+        <a href="index.html#more-section">Programs Offered</a>
+        <a href="index.html#more-section">Organizational Chart</a>
+      </div>
+    </div>
+
+    <a href="enrollment.html" class="enroll-btn">Enroll Now</a>
+  </div>
+</nav>
+
+
+<!-- ══ PAGE HERO ═══════════════════════════════════════════════════════ -->
+<div class="enroll-hero">
+  <div class="enroll-hero-inner">
+    <img src="images/logo.png" alt="ZCA Logo" class="logo">
+    <h1>Enrollment Form</h1>
+    <p>Please complete all steps below to apply for admission to Zinah Christian Academy. We look forward to welcoming you to our school community.</p>
+    <a href="class-policy.html" target="_blank" rel="noopener noreferrer" class="enroll-notice">
+      📋 Check our Class Schedule &amp; Attendance Policy before enrolling
+    </a>
+  </div>
+</div>
+
+
+<!-- ══ STEP INDICATOR ══════════════════════════════════════════════════ -->
+<div class="step-indicator" id="stepIndicator">
+  <div class="step-dot-wrap active" data-step="0">
+    <div class="step-dot">1</div>
+    <span class="step-dot-label">Personal</span>
+  </div>
+  <div class="step-dot-wrap" data-step="1">
+    <div class="step-dot">2</div>
+    <span class="step-dot-label">Contact</span>
+  </div>
+  <div class="step-dot-wrap" data-step="2">
+    <div class="step-dot">3</div>
+    <span class="step-dot-label">Family</span>
+  </div>
+  <div class="step-dot-wrap" data-step="3">
+    <div class="step-dot">4</div>
+    <span class="step-dot-label">Education</span>
+  </div>
+  <div class="step-dot-wrap" data-step="4">
+    <div class="step-dot">5</div>
+    <span class="step-dot-label">Enrollment</span>
+  </div>
+</div>
+
+<div class="progress-track">
+  <div class="progress-fill" id="formProgress"></div>
+</div>
+
+
+<!-- ══ FORM ════════════════════════════════════════════════════════════ -->
+<div class="form-outer">
+
+  <!-- Print-only document header (hidden on screen) -->
+  <div class="print-header">
+    <img src="images/logo.png" alt="ZCA Logo">
+    <div class="print-header-text">
+      <h1>Zinah Christian Academy</h1>
+      <p>Blk 50 Lot 22 Phase 2 Pinagsama Village, Taguig City &nbsp;|&nbsp; +63 998 995 7475 &nbsp;|&nbsp; zcataguig@gmail.com</p>
+      <p><strong>STUDENT ENROLLMENT FORM</strong></p>
+    </div>
+  </div>
+
+  <div class="form-card">
+  <form id="enrollmentForm" action="https://script.google.com/macros/s/AKfycbwj2rlIqFJ1RTLTV30fjwEnbQQGp8FvTzC1C7nzqzhESxhn_BeEthDOtxLl3Hc0d4Vr/exec" method="POST">
+
+    <!-- ── STEP 1: Personal Info ── -->
+    <fieldset class="step active">
+      <div class="step-header">
+        <div class="step-header-num">01</div>
+        <div class="step-header-text">
+          <legend>Personal Information</legend>
+          <p>Basic details about the student applicant</p>
+        </div>
+      </div>
+
+      <div class="step-body">
+        <div class="input-grid">
+
+          <div class="input-group">
+            <select id="schoolYear" name="schoolYear" required>
+              <option value="" disabled selected hidden></option>
+              <option value="2022-2023">2022-2023</option>
+              <option value="2023-2024">2023-2024</option>
+              <option value="2024-2025">2024-2025</option>
+              <option value="2025-2026">2025-2026</option>
+              <option value="2026-2027">2026-2027</option>
+              <option value="2027-2028">2027-2028</option>
+            </select>
+            <label>School Year</label>
+          </div>
+
+          <div class="input-group">
+            <input type="text" id="lastName" name="lastName" required placeholder=" ">
+            <label>Last Name</label>
+          </div>
+
+          <div class="input-group">
+            <input type="text" id="firstName" name="firstName" required placeholder=" ">
+            <label>First Name</label>
+          </div>
+
+          <div class="input-group">
+            <input type="text" id="middleName" name="middleName" required placeholder=" ">
+            <label>Middle Name</label>
+          </div>
+
+          <div class="input-group">
+            <select id="gender" name="gender" required>
+              <option value="" disabled selected hidden></option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+            <label>Gender</label>
+          </div>
+
+          <div class="input-group">
+            <input type="date" id="birthDate" name="birthDate" required placeholder=" ">
+            <label>Birth Date</label>
+          </div>
+
+          <div class="input-group">
+            <input type="number" id="age" name="age" required placeholder=" ">
+            <label>Age</label>
+          </div>
+
+          <div class="input-group">
+            <input type="text" id="placeofbirth" name="placeofbirth" required placeholder=" ">
+            <label>Place of Birth</label>
+          </div>
+
+          <div class="input-group">
+            <input type="text" id="nationality" name="nationality" required placeholder=" ">
+            <label>Nationality</label>
+          </div>
+
+          <div class="input-group">
+            <select id="civilstatus" name="civilstatus" required>
+              <option value="" disabled selected hidden></option>
+              <option value="Single">Single</option>
+              <option value="Married">Married</option>
+              <option value="Widowed">Widowed</option>
+              <option value="Divorced">Divorced</option>
+            </select>
+            <label>Civil Status</label>
+          </div>
+
+          <div class="input-group">
+            <input type="text" id="religion" name="religion" required placeholder=" ">
+            <label>Religion</label>
+          </div>
+
+          <div class="input-group input-full">
+            <label style="position:relative;top:0;left:0;font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--forest);display:block;margin-bottom:6px;">Upload Photo</label>
+            <input type="file" id="photoInput" name="photo" accept="image/*">
+            <img id="photoPreview">
+          </div>
+
+        </div>
+      </div>
+
+      <div class="wizard-buttons">
+        <span></span>
+        <button type="button" class="btn btn-primary next">Next Step →</button>
+      </div>
+    </fieldset>
+
+
+    <!-- ── STEP 2: Contact Info ── -->
+    <fieldset class="step">
+      <div class="step-header">
+        <div class="step-header-num">02</div>
+        <div class="step-header-text">
+          <legend>Contact Information</legend>
+          <p>How we can reach the student or guardian</p>
+        </div>
+      </div>
+
+      <div class="step-body">
+        <div class="input-grid">
+
+          <div class="input-group input-full">
+            <input type="text" name="homeAddress" required placeholder=" ">
+            <label>Home Address</label>
+          </div>
+
+          <div class="input-group">
+            <input type="tel" name="mobileNumber" required placeholder=" ">
+            <label>Mobile Number</label>
+          </div>
+
+          <div class="input-group">
+            <input type="tel" name="telephoneNumber" placeholder=" ">
+            <label>Telephone Number (optional)</label>
+          </div>
+
+          <div class="input-group input-full">
+            <input type="email" name="email" required placeholder=" ">
+            <label>Email Address</label>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="wizard-buttons">
+        <button type="button" class="btn btn-secondary prev">← Previous</button>
+        <button type="button" class="btn btn-primary next">Next Step →</button>
+      </div>
+    </fieldset>
+
+
+    <!-- ── STEP 3: Family / Guardian ── -->
+    <fieldset class="step">
+      <div class="step-header">
+        <div class="step-header-num">03</div>
+        <div class="step-header-text">
+          <legend>Family / Guardian Information</legend>
+          <p>Parent and guardian details</p>
+        </div>
+      </div>
+
+      <div class="step-body">
+        <div class="input-grid">
+
+          <p class="form-section-title">Father's Information</p>
+
+          <div class="input-group">
+            <input type="text" name="fatherName" required placeholder=" ">
+            <label>Father's Full Name</label>
+          </div>
+
+          <div class="input-group">
+            <input type="text" name="fatherOccupation" required placeholder=" ">
+            <label>Father's Occupation</label>
+          </div>
+
+          <div class="input-group input-full">
+            <input type="tel" name="fatherContact" required placeholder=" ">
+            <label>Father's Contact Number</label>
+          </div>
+
+          <p class="form-section-title">Mother's Information</p>
+
+          <div class="input-group">
+            <input type="text" name="motherName" required placeholder=" ">
+            <label>Mother's Full Name</label>
+          </div>
+
+          <div class="input-group">
+            <input type="text" name="motherOccupation" required placeholder=" ">
+            <label>Mother's Occupation</label>
+          </div>
+
+          <div class="input-group input-full">
+            <input type="tel" name="motherContact" required placeholder=" ">
+            <label>Mother's Contact Number</label>
+          </div>
+
+          <p class="form-section-title">Guardian Information (if applicable)</p>
+
+          <div class="input-group">
+            <input type="text" name="guardianName" placeholder=" ">
+            <label>Guardian's Full Name</label>
+          </div>
+
+          <div class="input-group">
+            <input type="text" name="guardianRelationship" placeholder=" ">
+            <label>Relationship to Student</label>
+          </div>
+
+          <div class="input-group input-full">
+            <input type="tel" name="guardianContact" placeholder=" ">
+            <label>Guardian's Contact Number</label>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="wizard-buttons">
+        <button type="button" class="btn btn-secondary prev">← Previous</button>
+        <button type="button" class="btn btn-primary next">Next Step →</button>
+      </div>
+    </fieldset>
+
+
+    <!-- ── STEP 4: Educational Background ── -->
+    <fieldset class="step">
+      <div class="step-header">
+        <div class="step-header-num">04</div>
+        <div class="step-header-text">
+          <legend>Educational Background</legend>
+          <p>Previous school and academic records</p>
+        </div>
+      </div>
+
+      <div class="step-body">
+        <div class="input-grid">
+
+          <div class="input-group">
+            <input type="text" name="lastSchool" required placeholder=" ">
+            <label>Last School Attended</label>
+          </div>
+
+          <div class="input-group">
+            <input type="text" name="schoolAddress" required placeholder=" ">
+            <label>School Address</label>
+          </div>
+
+          <div class="input-group">
+            <select name="schoolYearGraduated" required>
+              <option value="" disabled selected hidden></option>
+              <option value="2022-2023">2022-2023</option>
+              <option value="2023-2024">2023-2024</option>
+              <option value="2024-2025">2024-2025</option>
+              <option value="2025-2026">2025-2026</option>
+              <option value="2026-2027">2026-2027</option>
+              <option value="2027-2028">2027-2028</option>
+            </select>
+            <label>School Year Graduated</label>
+          </div>
+
+          <div class="input-group">
+            <input type="text" name="gradeLevelCompleted" required placeholder=" ">
+            <label>Grade Level Completed</label>
+          </div>
+
+          <div class="input-group">
+            <input type="text" name="honorsAwards" placeholder=" ">
+            <label>Honors or Awards (optional)</label>
+          </div>
+
+          <div class="input-group">
+            <input type="text" name="studentID" placeholder=" ">
+            <label>Student ID Number (optional)</label>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="wizard-buttons">
+        <button type="button" class="btn btn-secondary prev">← Previous</button>
+        <button type="button" class="btn btn-primary next">Next Step →</button>
+      </div>
+    </fieldset>
+
+
+    <!-- ── STEP 5: Enrollment Details ── -->
+    <fieldset class="step">
+      <div class="step-header">
+        <div class="step-header-num">05</div>
+        <div class="step-header-text">
+          <legend>Enrollment Details</legend>
+          <p>Grade level and enrollment type for this school year</p>
+        </div>
+      </div>
+
+      <div class="step-body">
+        <div class="input-grid">
+
+          <div class="input-group">
+            <select name="gradeLevelApplying" required>
+              <option value="" disabled selected hidden></option>
+              <option value="Pre-Kinder">Pre-Kinder</option>
+              <option value="Kinder">Kinder</option>
+              <option value="Grade 1">Grade 1</option>
+              <option value="Grade 2">Grade 2</option>
+              <option value="Grade 3">Grade 3</option>
+              <option value="Grade 4">Grade 4</option>
+              <option value="Grade 5">Grade 5</option>
+              <option value="Grade 6">Grade 6</option>
+            </select>
+            <label>Grade Level Applying For</label>
+          </div>
+
+          <div class="input-group">
+            <select name="studentType" required>
+              <option value="" disabled selected hidden></option>
+              <option value="New">New</option>
+              <option value="Transferee">Transferee</option>
+              <option value="Returnee">Returnee</option>
+              <option value="Continuing">Continuing</option>
+            </select>
+            <label>Type of Student</label>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="wizard-buttons">
+        <button type="button" class="btn btn-secondary prev">← Previous</button>
+        <button type="submit" class="btn btn-gold">✓ Submit Enrollment</button>
+      </div>
+
+      <div class="actions-row no-print">
+        <button type="button" id="printEnrollment" class="btn btn-outline">🖨 Print Enrollment Form</button>
+        <a href="index.html" class="btn btn-secondary">← Back to Home</a>
+      </div>
+
+    </fieldset>
+
+  </form>
+  </div><!-- /.form-card -->
+</div><!-- /.form-outer -->
+
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

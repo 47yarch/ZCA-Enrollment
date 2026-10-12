@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Zinah Christian Academy</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Lato:wght@400;700&family=Cormorant+Garamond:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<nav id="navbar">
+    <a href="#home" class="nav-brand">
+        <img src="images/logo.png" alt="ZCA Logo">
+        <div class="nav-brand-text">
+            <span class="nav-brand-name">Zinah Christian Academy</span>
+            <span class="nav-brand-tagline">Shaping Bright Futures with Christ-centered Approach</span>
+        </div>
+    </a>
+
+    <div class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+
+        <div class="nav-dropdown">
+            <a href="#">Curriculum ▾</a>
+            <div class="nav-dropdown-content">
+                <a href="#curriculum-section">Curriculum Overview</a>
+                <a href="#curriculum-section">Enrichment Subjects</a>
+                <a href="#curriculum-section">Character and Life Skills</a>
+                <div class="nav-subdropdown">
+                    <a href="#">Core Academic Subjects ▸</a>
+                    <div class="nav-subdropdown-content">
+                        <a href="#curriculum-section">English / Language Arts</a>
+                        <a href="#curriculum-section">Mathematics</a>
+                        <a href="#curriculum-section">Science</a>
+                        <a href="#curriculum-section">Social Studies</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <a href="#mission-vision">Mission &amp; Vision</a>
+        <a href="#events">Events</a>
+        <a href="#calendar">Calendar</a>
+
+        <div class="nav-dropdown">
+            <a href="#">More ▾</a>
+            <div class="nav-dropdown-content">
+                <a href="#more-section">School Facilities</a>
+                <a href="#more-section">Uniform</a>
+                <a href="#more-section">Programs Offered</a>
+                <a href="#more-section">Organizational Chart</a>
+            </div>
+        </div>
+
+        <a href="enrollment.html" class="enroll-btn">Enroll Now</a>
+    </div>
+</nav>
+
+<div class="hero-slideshow" id="heroSlideshow">
+
+    <div class="slide slide-enroll active">
+        <div class="slide-bg"></div>
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+            <span class="slide-badge">School Year 2025–2026 · Open Enrollment</span>
+            <h1>Begin Your Child's Journey with Us</h1>
+            <p>Secure your child's place at Zinah Christian Academy. Enrollment is now open for Pre-Kinder through Grade 6. Join a community where faith meets academic excellence.</p>
+            <a href="enrollment.html" class="slide-btn-cta">Enroll Now →</a>
+        </div>
+    </div>
+
+    <div class="slide slide-about">
+        <div class="slide-bg"></div>
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+            <span class="slide-badge">Est. 1992 · Taguig City</span>
+            <h1>More Than 30 Years of Shaping Young Leaders</h1>
+            <p>Founded in 1992, ZCA has been nurturing young minds through academic excellence, strong moral values, and a Christ-centered supportive environment every student deserves.</p>
+            <a href="#about" class="slide-btn-cta">Discover Our Story →</a>
+        </div>
+    </div>
+
+    <div class="slide slide-mission">
+        <div class="slide-bg"></div>
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+            <span class="slide-badge">Our Purpose</span>
+            <h1>Guided by Faith, Driven by Excellence</h1>
+            <p>Our mission is to provide Christ-centered education that equips students with knowledge, values, and skills to lead with integrity and serve their communities with compassion.</p>
+            <a href="#mission-vision" class="slide-btn-cta">Our Mission &amp; Vision →</a>
+        </div>
+    </div>
+
+    <div class="slide slide-curriculum">
+        <div class="slide-bg"></div>
+        <div class="slide-overlay"></div>
+        <div class="slide-content">
+            <span class="slide-badge">Academics</span>
+            <h1>A Curriculum Built for Whole-Child Growth</h1>
+            <p>From core academics to enrichment subjects and character formation, our curriculum is thoughtfully designed to develop every dimension of your child's potential.</p>
+            <a href="#curriculum-section" class="slide-btn-cta">Explore Our Curriculum →</a>
+        </div>
+    </div>
+
+    <button class="slideshow-arrow prev" id="slidePrev" aria-label="Previous slide">&#8592;</button>
+    <button class="slideshow-arrow next" id="slideNext" aria-label="Next slide">&#8594;</button>
+
+    <div class="slideshow-dots">
+        <button class="slideshow-dot active" data-index="0" aria-label="Slide 1"></button>
+        <button class="slideshow-dot" data-index="1" aria-label="Slide 2"></button>
+        <button class="slideshow-dot" data-index="2" aria-label="Slide 3"></button>
+        <button class="slideshow-dot" data-index="3" aria-label="Slide 4"></button>
+    </div>
+</div>
+
+<section id="home" class="home-section">
+
+  <!-- Welcome banner -->
+  <div class="home-welcome">
+    <div class="section-label">Welcome</div>
+    <h2 class="home-welcome-title">Zinah Christian <span>Academy</span></h2>
+    <p class="home-welcome-sub">We are committed to providing quality Christian education that nurtures academic excellence and strong moral values in every student.</p>
+  </div>
+
+  <!-- Why Choose Us -->
+  <div id="highlights">
+    <div class="section-label">Why Choose Us</div>
+    <h2 class="highlights-title">A School That <span>Truly Cares</span></h2>
+    <div class="highlight-container">
+      <div class="highlight-card">
+        <div class="hc-img-wrap"><img src="images/teachers.jpg" alt="Teachers"></div>
+        <div class="hc-body">
+          <span class="hc-icon">👩‍🏫</span>
+          <h3>Qualified &amp; Caring Teachers</h3>
+          <p>Our certified, dedicated educators create a warm, engaging classroom environment where every student is seen and supported.</p>
+        </div>
+      </div>
+      <div class="highlight-card">
+        <div class="hc-img-wrap"><img src="images/safe.jpg" alt="Safe Environment"></div>
+        <div class="hc-body">
+          <span class="hc-icon">🛡️</span>
+          <h3>Safe &amp; Supportive Environment</h3>
+          <p>We maintain a secure, inclusive campus where students feel safe to learn, grow, and express themselves freely.</p>
+        </div>
+      </div>
+      <div class="highlight-card">
+        <div class="hc-img-wrap"><img src="images/excellence.jpg" alt="Academic Excellence"></div>
+        <div class="hc-body">
+          <span class="hc-icon">🏆</span>
+          <h3>Academic Excellence</h3>
+          <p>Our rigorous yet balanced curriculum prepares students for higher learning with a strong foundation in all core subjects.</p>
+        </div>
+      </div>
+      <div class="highlight-card">
+        <div class="hc-img-wrap"><img src="images/holistic.jpg" alt="Holistic Development"></div>
+        <div class="hc-body">
+          <span class="hc-icon">🌱</span>
+          <h3>Holistic Development</h3>
+          <p>Beyond academics, we shape character, faith, and leadership — nurturing every dimension of a child's potential.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Stats -->
+  <div id="stats">
+    <div class="section-label">Our Impact</div>
+    <h2 class="stats-title">Shaping Futures <span>by the Numbers</span></h2>
+    <div class="stats-container">
+      <div class="stat">
+        <h3>500+</h3>
+        <p>Students</p>
+        <div class="bar"><div class="fill" style="width:0%;"></div></div>
+      </div>
+      <div class="stat">
+        <h3>25+</h3>
+        <p>Certified Teachers</p>
+        <div class="bar"><div class="fill" style="width:0%;"></div></div>
+      </div>
+      <div class="stat">
+        <h3>95%</h3>
+        <p>Graduation Rate</p>
+        <div class="bar"><div class="fill" style="width:0%;"></div></div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section id="about" class="about-redesign">
+
+  <!-- Left: image panel -->
+  <div class="about-image-panel">
+    <div class="about-img-bg"></div>
+    <div class="about-img-overlay"></div>
+    <div class="about-float-card about-float-card--top">
+      <span class="afc-number">30+</span>
+      <span class="afc-label">Years of Excellence</span>
+    </div>
+    <div class="about-float-card about-float-card--bottom">
+      <span class="afc-number">Est. 1992</span>
+      <span class="afc-label">Taguig City, Philippines</span>
+    </div>
+  </div>
+
+  <!-- Right: text panel -->
+  <div class="about-text-panel">
+    <div class="section-label">Who We Are</div>
+    <h2 class="about-heading">Nurturing Young Minds <span>Since 1992</span></h2>
+
+    <p class="about-lead">Founded in 1992, Zinah Christian Academy has been dedicated to nurturing young minds and shaping future leaders through academic excellence, strong moral values, and a supportive learning environment.</p>
+
+    <div class="about-pillars">
+      <div class="about-pillar">
+        <div class="pillar-icon">🏫</div>
+        <div>
+          <h4>Modern Campus</h4>
+          <p>Modern classrooms, well-equipped science and computer labs, a vibrant library, and spacious sports facilities.</p>
+        </div>
+      </div>
+      <div class="about-pillar">
+        <div class="pillar-icon">📖</div>
+        <div>
+          <h4>Balanced Education</h4>
+          <p>A teaching philosophy that balances rigorous academics with character development, fostering creativity and critical thinking.</p>
+        </div>
+      </div>
+      <div class="about-pillar">
+        <div class="pillar-icon">✝️</div>
+        <div>
+          <h4>Christ-Centered Values</h4>
+          <p>Spiritual growth is woven into every aspect of school life, producing well-rounded graduates of faith and integrity.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="about-principal-quote">
+      <div class="apq-bar"></div>
+      <div>
+        <p class="apq-text">"We believe every child has unique potential. Our mission is to guide, inspire, and empower each student to thrive academically, socially, and spiritually."</p>
+        <span class="apq-author">— School Principal, Zinah Christian Academy</span>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<section id="curriculum-section" class="zca-section zca-section--light">
+  <div class="zca-section-inner">
+    <div class="section-label">Academics</div>
+    <h2 class="section-title">Our <span>Curriculum</span></h2>
+    <p class="section-subtitle">A Christ-centered program that develops students academically, spiritually, and holistically — from Pre-Kinder through Grade 6.</p>
+
+    <div class="curric-tabs">
+      <button class="curric-tab active" data-panel="overview">Overview</button>
+      <button class="curric-tab" data-panel="enrichment">Enrichment Subjects</button>
+      <button class="curric-tab" data-panel="character">Character &amp; Life Skills</button>
+      <button class="curric-tab" data-panel="core">Core Academic Subjects</button>
+    </div>
+
+    <!-- Overview -->
+    <div class="curric-panel active" id="panel-overview">
+      <div class="overview-grid">
+        <div class="overview-text">
+          <p>Zinah Christian Academy provides a Christ-centered education designed to develop students academically, spiritually, socially, and physically. The curriculum integrates biblical principles with academic subjects to nurture learners who are knowledgeable, responsible, and guided by Christian values.</p>
+          <p>Our program ensures that learning is organized, balanced, and aligned with the goals of the school — combining rigorous academics with character formation every step of the way.</p>
+          <p>Core subjects such as language, mathematics, science, and social studies are complemented by enrichment subjects like arts, physical education, and technology for a truly holistic education.</p>
+        </div>
+        <div>
+          <div style="margin-bottom:18px;"><div class="section-label" style="font-size:10px;">Spiritual Formation</div></div>
+          <div class="spiritual-stack">
+            <div class="spiritual-item"><div class="spiritual-num">01</div><div><h4>Bible Studies</h4><p>Biblical stories, teachings, and Christian principles that guide faith and daily life.</p></div></div>
+            <div class="spiritual-item"><div class="spiritual-num">02</div><div><h4>Scripture Memory</h4><p>Memorizing key Bible verses to strengthen faith and encourage moral character.</p></div></div>
+            <div class="spiritual-item"><div class="spiritual-num">03</div><div><h4>Prayer &amp; Devotions</h4><p>Daily prayer and devotions to develop a personal relationship with God.</p></div></div>
+            <div class="spiritual-item"><div class="spiritual-num">04</div><div><h4>Chapel Services</h4><p>Regular chapel gatherings for worship, teaching, and community fellowship.</p></div></div>
+            <div class="spiritual-item"><div class="spiritual-num">05</div><div><h4>Christian Values &amp; Character</h4><p>Guiding students to develop integrity, kindness, responsibility, and leadership.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Enrichment -->
+    <div class="curric-panel" id="panel-enrichment">
+      <div class="enrich-grid">
+        <div class="enrich-card"><span class="enrich-icon">🎵</span><h3>Music</h3><p>Students appreciate and understand different forms of music, learning rhythm, melody, and harmony. They participate in singing, playing instruments, and performing in school activities.</p></div>
+        <div class="enrich-card"><span class="enrich-icon">🎨</span><h3>Arts &amp; Crafts</h3><p>Students express their creativity through drawing, coloring, painting, and craft projects using various materials, developing fine motor skills, patience, and appreciation for art.</p></div>
+        <div class="enrich-card"><span class="enrich-icon">⚽</span><h3>Physical Education</h3><p>Through games, sports, and activities, students develop strength, coordination, flexibility, and teamwork while learning the importance of an active and healthy lifestyle.</p></div>
+        <div class="enrich-card"><span class="enrich-icon">💻</span><h3>Computer &amp; Technology</h3><p>Students learn typing, research, creating documents, and using educational software while practicing safe and ethical use of digital tools.</p></div>
+      </div>
+    </div>
+
+    <!-- Character -->
+    <div class="curric-panel" id="panel-character">
+      <div class="character-bento">
+        <div class="character-bento-card character-bento-card--featured">
+          <div class="char-icon">🌟</div>
+          <div>
+            <h3>Leadership Training</h3>
+            <p>Students develop leadership skills through classroom responsibilities, group activities, and school programs. They learn to guide others, make responsible decisions, and serve as positive role models — building confidence, initiative, and responsibility.</p>
+          </div>
+        </div>
+        <div class="character-bento-card">
+          <span class="char-icon-sm">🤝</span>
+          <h3>Teamwork &amp; Cooperation</h3>
+          <p>Through group activities and school events, students learn communication, respect for different ideas, and cooperation in achieving common goals — building strong relationships and unity.</p>
+        </div>
+        <div class="character-bento-card">
+          <span class="char-icon-sm">📋</span>
+          <h3>Responsibility &amp; Discipline</h3>
+          <p>Students are taught accountability for their actions, completing tasks on time, and following school rules. The school encourages self-discipline, good study habits, and respect for authority.</p>
+        </div>
+        <div class="character-bento-card character-bento-card--wide">
+          <span class="char-icon-sm">❤️</span>
+          <h3>Community Service Activities</h3>
+          <p>Through outreach programs and service projects, students learn the value of compassion, kindness, and helping others. These experiences develop empathy, social awareness, and a heart for serving the community.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Core subjects -->
+    <div class="curric-panel" id="panel-core">
+      <div class="core-list">
+        <div class="core-item"><div class="core-bullet">📖</div><div><h3 id="english">English / Language Arts</h3><p>Students develop reading, writing, grammar, spelling, and vocabulary through stories, discussions, and writing activities that build communication and critical thinking.</p></div></div>
+        <div class="core-item"><div class="core-bullet">🔢</div><div><h3 id="math">Mathematics</h3><p>Strengthens logical thinking and problem-solving from number concepts to geometry and practical applications of math in everyday life.</p></div></div>
+        <div class="core-item"><div class="core-bullet">🔬</div><div><h3 id="science">Science</h3><p>Encourages curiosity and exploration of the natural world through lessons and simple experiments covering living things, the environment, and energy.</p></div></div>
+        <div class="core-item"><div class="core-bullet">🌍</div><div><h3 id="social-studies">Social Studies</h3><p>Students learn about communities, history, culture, and geography, developing responsible citizenship and respect for diversity.</p></div></div>
+        <div class="core-item"><div class="core-bullet">✝️</div><div><h3>Christian Education / Bible Studies</h3><p>Helps students grow spiritually by learning biblical teachings and Christian values, applying faith-based principles in daily life.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="mission-vision" class="mv-section">
+  <div class="mv-section-inner">
+    <div class="section-label">Our Purpose</div>
+    <h2 class="mv-section-title">Mission &amp; <span>Vision</span></h2>
+    <p class="mv-section-sub">The guiding principles that shape every decision, lesson, and relationship at Zinah Christian Academy.</p>
+
+    <div class="mv-cards-row">
+
+      <div class="mv-card-new">
+        <div class="mv-card-icon">🎯</div>
+        <div class="mv-card-tag">Mission</div>
+        <h3>What We Do</h3>
+        <p>To provide a Christ-centered education that nurtures the intellectual, spiritual, and moral growth of every student, equipping them with the knowledge, values, and skills to excel academically, lead with integrity, and serve their communities.</p>
+        <div class="mv-card-line"></div>
+      </div>
+
+      <div class="mv-card-new mv-card-new--accent">
+        <div class="mv-card-icon">💡</div>
+        <div class="mv-card-tag">Vision</div>
+        <h3>Where We're Going</h3>
+        <p>To be a leading Christian academy recognized for academic excellence, character development, and spiritual formation, where students are empowered to become responsible, compassionate, and confident leaders in a changing world.</p>
+        <div class="mv-card-line"></div>
+      </div>
+
+    </div>
+
+    <div class="mv-cta-bar">
+      Join us in nurturing future leaders →
+      <a href="enrollment.html">Enroll Now</a>
+    </div>
+  </div>
+</section>
+
+<section id="events" class="events-section">
+  <div class="events-section-inner">
+    <div class="section-label">School Life</div>
+    <h2 class="events-title">Upcoming <span>Events</span></h2>
+    <p class="events-subtitle">Stay updated with the latest happenings and celebrations at Zinah Christian Academy.</p>
+
+    <div class="events-grid">
+
+      <div class="event-card-new">
+        <div class="ecn-slider">
+          <div class="ecn-slides">
+            <img src="images/parenting1.jpg" alt="Parenting Seminar">
+            <img src="images/parenting2.jpg" alt="Parenting Seminar">
+            <img src="images/parenting3.jpg" alt="Parenting Seminar">
+            <img src="images/parenting4.jpg" alt="Parenting Seminar">
+          </div>
+          <button class="ecn-btn ecn-prev">&#10094;</button>
+          <button class="ecn-btn ecn-next">&#10095;</button>
+          <div class="ecn-date-badge">Feb 7, 2026</div>
+        </div>
+        <div class="ecn-body">
+          <span class="ecn-tag">Seminar</span>
+          <h3>Parenting Seminar</h3>
+          <p>Join our 2026 Marriage &amp; Parenting Seminar on Feb 7, 9AM–12NN at Jollibee Petron C5! Open to all — ₱375 (lunch included).</p>
+        </div>
+      </div>
+
+      <div class="event-card-new">
+        <div class="ecn-slider">
+          <div class="ecn-slides">
+            <img src="images/pageant1.jpg" alt="Pageant">
+            <img src="images/pageant2.jpg" alt="Pageant">
+            <img src="images/pageant3.jpg" alt="Pageant">
+            <img src="images/pageant4.jpg" alt="Pageant">
+          </div>
+          <button class="ecn-btn ecn-prev">&#10094;</button>
+          <button class="ecn-btn ecn-next">&#10095;</button>
+          <div class="ecn-date-badge">Feb 26, 2026</div>
+        </div>
+        <div class="ecn-body">
+          <span class="ecn-tag">Pageant</span>
+          <h3>Little Mr. &amp; Miss / Mr. &amp; Ms. Zinah</h3>
+          <p>A fun and glamorous pageant showcasing the confidence, talent, and charm of our students.</p>
+        </div>
+      </div>
+
+      <div class="event-card-new">
+        <div class="ecn-slider">
+          <div class="ecn-slides">
+            <img src="images/sports1.jpg" alt="Sports Fest">
+            <img src="images/sports2.jpg" alt="Sports Fest">
+            <img src="images/sports3.jpg" alt="Sports Fest">
+            <img src="images/sports4.jpg" alt="Sports Fest">
+            <img src="images/sports5.jpg" alt="Sports Fest">
+          </div>
+          <button class="ecn-btn ecn-prev">&#10094;</button>
+          <button class="ecn-btn ecn-next">&#10095;</button>
+          <div class="ecn-date-badge">Feb 27, 2026</div>
+        </div>
+        <div class="ecn-body">
+          <span class="ecn-tag">Sports</span>
+          <h3>Sports Fest / Family Day</h3>
+          <p>Friendly competition and quality family time as our houses face off in exciting games and activities.</p>
+        </div>
+      </div>
+
+      <div class="event-card-new">
+        <div class="ecn-slider">
+          <div class="ecn-slides">
+            <img src="images/graduation1.jpg" alt="Graduation">
+            <img src="images/graduation2.jpg" alt="Graduation">
+            <img src="images/graduation3.jpg" alt="Graduation">
+            <img src="images/graduation4.jpg" alt="Graduation">
+          </div>
+          <button class="ecn-btn ecn-prev">&#10094;</button>
+          <button class="ecn-btn ecn-next">&#10095;</button>
+          <div class="ecn-date-badge">Mar 24, 2026</div>
+        </div>
+        <div class="ecn-body">
+          <span class="ecn-tag">Ceremony</span>
+          <h3>Graduation &amp; Recognition Ceremony</h3>
+          <p>Honoring the hard work and achievements of our students as they reach important milestones.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="calendar" class="calendar-section">
+  <div class="calendar-section-inner">
+    <div class="section-label section-label--light">Schedule</div>
+    <h2 class="calendar-title">Academic <span style="color:#7ee8a2;">Calendar</span></h2>
+    <p class="calendar-subtitle">Click any event to view details. Navigate months using the arrows.</p>
+
+    <!-- ── Interactive Calendar ── -->
+    <div class="ical-wrap">
+
+      <div class="ical-header">
+        <span class="ical-title" id="calTitle"></span>
+        <div class="ical-nav">
+          <button id="calPrev">&#8592;</button>
+          <button id="calToday">Today</button>
+          <button id="calNext">&#8594;</button>
+        </div>
+      </div>
+
+      <div class="ical-legend">
+        <div class="leg-i"><div class="leg-dot" style="background:#065d32"></div>Academic</div>
+        <div class="leg-i"><div class="leg-dot" style="background:#1a6fb5"></div>Seminar</div>
+        <div class="leg-i"><div class="leg-dot" style="background:#b5851a"></div>Pageant</div>
+        <div class="leg-i"><div class="leg-dot" style="background:#8e44ad"></div>Sports</div>
+        <div class="leg-i"><div class="leg-dot" style="background:#c0392b"></div>Ceremony</div>
+        <div class="leg-i"><div class="leg-dot" style="background:#27ae60"></div>Holiday</div>
+        <div class="leg-i"><div class="leg-dot" style="background:#7f8c8d"></div>Admin</div>
+      </div>
+
+      <div class="ical-dow">
+        <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+      </div>
+      <div class="ical-grid" id="icalGrid"></div>
+
+    </div>
+
+    <!-- Event popup -->
+    <div id="icalPopup" class="ical-popup" style="display:none;">
+      <div class="ical-popup-inner">
+        <button class="ical-popup-close" id="icalPopupClose">&#10005;</button>
+        <div class="ical-popup-tag" id="icalPopupTag"></div>
+        <h3 class="ical-popup-title" id="icalPopupTitle"></h3>
+        <p class="ical-popup-desc" id="icalPopupDesc"></p>
+        <p class="ical-popup-date" id="icalPopupDate"></p>
+      </div>
+    </div>
+
+    <div class="calendar-download">
+      <a href="calendar/ZCA CALENDAR OF ACTIVITIES.pdf" download class="btn-download">
+        ⬇ Download Official Calendar (PDF)
+      </a>
+    </div>
+  </div>
+</section>
+
+<section id="more-section" class="zca-section zca-section--dark">
+  <div class="zca-section-inner">
+    <div class="section-label section-label--light">School Information</div>
+    <h2 class="section-title section-title--light">More About <span style="color:#7ee8a2;">ZCA</span></h2>
+    <p class="section-subtitle section-subtitle--light">Explore our facilities, uniform policy, programs, and organizational structure.</p>
+
+    <div class="more-tabs-nav">
+      <button class="more-tab-btn active" data-panel="facilities">🏫 Facilities</button>
+      <button class="more-tab-btn" data-panel="uniform">👔 Uniform</button>
+      <button class="more-tab-btn" data-panel="programs">📚 Programs</button>
+      <button class="more-tab-btn" data-panel="orgchart">🏛️ Org Chart</button>
+    </div>
+
+    <!-- Facilities -->
+    <div class="more-panel active" id="mpanel-facilities">
+      <div class="facilities-mini-grid">
+        <div class="facility-chip"><span>🏫</span><span>Classrooms</span></div>
+        <div class="facility-chip"><span>📚</span><span>Library</span></div>
+        <div class="facility-chip"><span>💻</span><span>Computer Lab</span></div>
+        <div class="facility-chip"><span>🔬</span><span>Science Lab</span></div>
+        <div class="facility-chip"><span>🏋️</span><span>Gymnasium</span></div>
+        <div class="facility-chip"><span>🎭</span><span>Auditorium</span></div>
+        <div class="facility-chip"><span>🍽️</span><span>Cafeteria</span></div>
+        <div class="facility-chip"><span>🧭</span><span>Guidance Office</span></div>
+        <div class="facility-chip"><span>🛝</span><span>Playground</span></div>
+      </div>
+
+      <!-- Detailed facility cards below chips -->
+      <div class="facility-detail-grid">
+        <div class="facility-detail-card" id="classrooms"><div class="fdc-img-wrap"><img src="images/classroom.png" alt="Classrooms"></div><div class="fdc-body"><h3>Classrooms</h3><p>Modern and comfortable classrooms designed to create a positive and inspiring learning environment.</p></div></div>
+        <div class="facility-detail-card" id="library"><div class="fdc-img-wrap"><img src="images/library.png" alt="Library"></div><div class="fdc-body"><h3>Library</h3><p>Contains books, references, magazines, and digital resources for research and study.</p></div></div>
+        <div class="facility-detail-card" id="computer-lab"><div class="fdc-img-wrap"><img src="images/computerlab.png" alt="Computer Lab"></div><div class="fdc-body"><h3>Computer Laboratory</h3><p>Students develop digital skills and complete technology-related projects here.</p></div></div>
+        <div class="facility-detail-card" id="science-lab"><div class="fdc-img-wrap"><img src="images/sciencelab.png" alt="Science Lab"></div><div class="fdc-body"><h3>Science Laboratory</h3><p>Allows students to perform experiments and explore scientific concepts hands-on.</p></div></div>
+        <div class="facility-detail-card" id="gymnasium"><div class="fdc-img-wrap"><img src="images/gym.png" alt="Gymnasium"></div><div class="fdc-body"><h3>Gymnasium</h3><p>Used for physical education classes, sports training, and school programs.</p></div></div>
+        <div class="facility-detail-card" id="auditorium"><div class="fdc-img-wrap"><img src="images/audi.png" alt="Auditorium"></div><div class="fdc-body"><h3>Auditorium</h3><p>Used for assemblies, school programs, performances, and special events.</p></div></div>
+        <div class="facility-detail-card" id="cafeteria"><div class="fdc-img-wrap"><img src="images/cafe.png" alt="Cafeteria"></div><div class="fdc-body"><h3>Cafeteria</h3><p>Provides meals and a comfortable place for students to relax during breaks.</p></div></div>
+        <div class="facility-detail-card" id="guidance"><div class="fdc-img-wrap"><img src="images/guidance.png" alt="Guidance Office"></div><div class="fdc-body"><h3>Guidance Office</h3><p>Supports students' academic, personal, and social development.</p></div></div>
+        <div class="facility-detail-card" id="playground"><div class="fdc-img-wrap"><img src="images/playground.png" alt="Playground"></div><div class="fdc-body"><h3>Playground</h3><p>A safe outdoor area where students can play, relax, and socialize.</p></div></div>
+      </div>
+    </div>
+
+    <!-- Uniform -->
+    <div class="more-panel" id="mpanel-uniform">
+      <div class="uniform-showcase-img">
+        <img src="images/zca-uniform.png" alt="Zinah Christian Academy Uniform">
+      </div>
+      <div class="uniform-showcase">
+        <div class="uniform-day">
+          <div class="uniform-day-label">Monday – Thursday</div>
+          <h4 id="regular-uniform">Regular Uniform</h4>
+          <p style="font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:14px;">The uniform features a green design with gray lines representing the school's identity — promoting discipline, unity, and professionalism.</p>
+          <ul class="uniform-items">
+            <li>Green dress with gray stripe patterns (Girls)</li>
+            <li>Ribbon worn on the collar (Girls)</li>
+            <li>Green polo top with gray lines (Boys)</li>
+            <li>Gray or dark slacks (Boys)</li>
+            <li>Black school shoes</li>
+            <li>White socks (Girls) / Dark socks (Boys)</li>
+            <li>School ID with lanyard</li>
+          </ul>
+        </div>
+        <div class="uniform-day">
+          <div class="uniform-day-label">Every Friday</div>
+          <h4 id="pe-uniform">P.E. Uniform</h4>
+          <p style="font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:14px;">Worn every Friday to allow comfortable movement during physical activities, sports, and exercise programs.</p>
+          <ul class="uniform-items">
+            <li>ZCA P.E. T-shirt</li>
+            <li>Athletic shorts or jogging pants</li>
+            <li>Rubber shoes or sneakers</li>
+            <li>Sports socks</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Programs -->
+    <div class="more-panel" id="mpanel-programs">
+      <div class="programs-track">
+        <div class="program-row">
+          <div class="program-age">PK</div>
+          <div>
+            <h4>Pre-Kinder Program</h4>
+            <p>Introduces young children to the school environment through play-based learning. Focuses on recognizing letters, numbers, colors, shapes, and developing social and communication skills.</p>
+          </div>
+          <div class="program-badge">Ages 3–4</div>
+        </div>
+        <div class="program-row">
+          <div class="program-age">K</div>
+          <div>
+            <h4>Kindergarten Program</h4>
+            <p>Prepares children for formal education with basic reading, writing, and counting skills while developing creativity, confidence, and teamwork.</p>
+          </div>
+          <div class="program-badge">Ages 5–6</div>
+        </div>
+        <div class="program-row">
+          <div class="program-age">1–6</div>
+          <div>
+            <h4>Elementary Program</h4>
+            <p>A strong academic foundation covering English, Mathematics, Science, Filipino, Araling Panlipunan, Values Education, and Physical Education across six grade levels.</p>
+          </div>
+          <div class="program-badge">Ages 6–12</div>
+        </div>
+      </div>
+      <div style="margin-top:40px;">
+        <div class="section-label section-label--light" style="font-size:10px;">School Goals</div>
+        <div class="goals-grid">
+          <div class="goal-card"><span>🎓</span><h4>Academic Development</h4><p>Quality education that helps students develop strong knowledge and learning skills.</p></div>
+          <div class="goal-card"><span>✝️</span><h4>Character Formation</h4><p>Teaching values such as respect, honesty, responsibility, and discipline.</p></div>
+          <div class="goal-card"><span>🌱</span><h4>Holistic Growth</h4><p>Supporting the intellectual, physical, emotional, and social development of every learner.</p></div>
+          <div class="goal-card"><span>🚀</span><h4>Future Preparation</h4><p>Equipping students with skills and knowledge needed for success in higher education.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="more-panel" id="mpanel-orgchart">
+      <div class="orgchart-visual">
+        <div class="org-node-wrapper">
+          <div class="org-node org-node--principal">
+            <span>Leadership</span>
+            <strong>School Principal</strong>
+          </div>
+          <div class="org-connector"></div>
+          <div class="org-row">
+            <div class="org-col"><div class="org-connector org-connector--short"></div><div class="org-node"><span>Faculty</span><strong>Kinder Teachers</strong></div></div>
+            <div class="org-col"><div class="org-connector org-connector--short"></div><div class="org-node"><span>Faculty</span><strong>Grade 1–3 Teachers</strong></div></div>
+            <div class="org-col"><div class="org-connector org-connector--short"></div><div class="org-node"><span>Faculty</span><strong>Grade 4–6 Teachers</strong></div></div>
+            <div class="org-col"><div class="org-connector org-connector--short"></div><div class="org-node"><span>Support</span><strong>Administrative Staff</strong></div></div>
+          </div>
+        </div>
+        <div class="orgchart-image-wrap">
+          <img src="images/zca-orgchart.png" alt="Zinah Christian Academy Organizational Chart">
+        </div>
+        <p class="orgchart-desc-text">The School Principal oversees all administration and academic operations. Grade-level teachers from Kindergarten through Grade 6 are responsible for delivering quality education, supported by administrative staff managing records, communications, and facilities.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Visit &amp; Contact Us</h2>
+  <div class="contact-container">
+    <div class="contact-info">
+      <p><strong>Address:</strong> Blk 50 Lot 22 Phase 2 Pinagsama Village</p>
+      <p><strong>Phone:</strong> +63 998 995 7475</p>
+      <p><strong>Email:</strong> <a href="/cdn-cgi/l/email-protection#e09a8381948187958987a0878d81898cce838f8d"><span class="__cf_email__" data-cfemail="dda7bebca9bcbaa8b4ba9dbab0bcb4b1f3beb2b0">[email&#160;protected]</span></a></p>
+      <p><strong>Facebook:</strong> <a href="https://www.facebook.com/ZCATaguig" target="_blank" rel="noopener noreferrer">Zinah Christian Academy</a></p>
+    </div>
+    <div id="map"></div>
+  </div>
+</section>
+
+<footer>
+    <p>&copy; 1992 Zinah Christian Academy. All rights reserved.</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
