@@ -243,18 +243,66 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(function (result) {
           if (!result.isConfirmed) return;
           Swal.fire({ title: "Submitting Enrollment...", text: "Please wait while we save your information.", allowOutsideClick: false, allowEscapeKey: false, didOpen: function () { Swal.showLoading(); } });
-          fetch("https://script.google.com/macros/s/AKfycbwj2rlIqFJ1RTLTV30fjwEnbQQGp8FvTzC1C7nzqzhESxhn_BeEthDOtxLl3Hc0d4Vr/exec", { method: "POST", body: new URLSearchParams(enrollmentData) })
-          .then(function (r) { return r.text(); })
-          .then(function () {
-            Swal.close();
-            Swal.fire({ icon: "success", title: "Enrollment Successfully Saved!", html: "Your enrollment has been successfully submitted.<br><br>An email containing the detailed school fees, payment plans, and required documents has been sent to <strong>" + enrollmentData.email + "</strong>.", confirmButtonText: "OK" });
-            currentStep = steps.length - 1; showStep(currentStep);
-          })
-          .catch(function (err) {
-            Swal.close();
-            Swal.fire({ icon: "error", title: "Submission Failed", text: "Unable to save enrollment. Please check your internet connection and try again." });
-            console.error(err);
-          });
+          
+
+fetch("/submit-enrollment", {
+    method: "POST",
+    body: new URLSearchParams(enrollmentData)
+})
+.then(async function (response) {
+    const responseText = await response.text();
+    let result;
+
+    try {
+        result = JSON.parse(responseText);
+    } catch (error) {
+        console.error(
+            "Server returned non-JSON content:",
+            responseText.slice(0, 1000)
+        );
+
+        throw new Error(
+            "The server returned an HTML or invalid response. " +
+            "Check the Flask route and terminal output."
+        );
+    }
+
+    if (!response.ok || !result.success) {
+        throw new Error(
+            result.message || "Enrollment submission failed."
+        );
+    }
+
+    return result;
+})
+.then(function (result) {
+    Swal.close();
+
+    
+Swal.fire({
+    icon: "success",
+    title: "Enrollment Successfully Saved!",
+    text: result.message,
+    confirmButtonText: "OK"
+});
+
+
+    currentStep = steps.length - 1;
+    showStep(currentStep);
+})
+.catch(function (err) {
+    Swal.close();
+
+    Swal.fire({
+        icon: "error",
+        title: "Submission Failed",
+        text: err.message || "Unable to submit enrollment."
+    });
+
+    console.error("Enrollment submission error:", err);
+});
+
+
         });
       }
     });
