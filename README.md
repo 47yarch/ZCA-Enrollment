@@ -56,83 +56,83 @@ This project was developed during the second semester of academic studies, befor
 
 ## Screenshots
 
-The screenshots below are stored in the `docs/screenshot/` directory. The image paths use the filenames provided for this project.
+The screenshots below are stored in the `docs/screenshots/` directory. The image paths use the filenames provided for this project.
 
 ### 1. Homepage and School Information
 
 **Homepage**
 
-![ZCA Homepage](docs/screenshot/homepage.png)
+![ZCA Homepage](docs/screenshots/homepage.png)
 
 **School Information**
 
-![School Information](docs/screenshot/school-information.png)
+![School Information](docs/screenshots/school-information.png)
 
 **School Information — Additional View**
 
-![School Information Additional View](docs/screenshot/school-information1.png)
+![School Information Additional View](docs/screenshots/school-information1.png)
 
 ### 2. Programs, Curriculum, and Uniform
 
 **Programs**
 
-![School Programs](docs/screenshot/programs.png)
+![School Programs](docs/screenshots/programs.png)
 
 **Curriculum**
 
-![School Curriculum](docs/screenshot/curriculum.png)
+![School Curriculum](docs/screenshots/curriculum.png)
 
 **School Uniform**
 
-![School Uniform](docs/screenshot/uniform.png)
+![School Uniform](docs/screenshots/uniform.png)
 
 ### 3. Events and Calendar
 
 **School Events**
 
-![School Events](docs/screenshot/events.png)
+![School Events](docs/screenshots/events.png)
 
 **School Calendar**
 
-![School Calendar](docs/screenshot/calendar.png)
+![School Calendar](docs/screenshots/calendar.png)
 
 ### 4. Class Schedule and Attendance Policy
 
 **Attendance Policy**
 
-![Attendance Policy](docs/screenshot/attendance-policy.png)
+![Attendance Policy](docs/screenshots/attendance-policy.png)
 
 **Class Schedule**
 
-![Class Schedule](<docs/screenshot/class schedule.png>)
+![Class Schedule](<docs/screenshots/class schedule.png>)
 
 **Class Schedule — Additional View**
 
-![Class Schedule Additional View](docs/screenshot/class-schedule1.png)
+![Class Schedule Additional View](docs/screenshots/class-schedule1.png)
 
 **Class Schedule — Additional View 2**
 
-![Class Schedule Additional View 2](docs/screenshot/class-schedule2.png)
+![Class Schedule Additional View 2](docs/screenshots/class-schedule2.png)
 
 ### 5. Enrollment Form
 
 **Enrollment Form**
 
-![Enrollment Form](docs/screenshot/enrollment-form.png)
+![Enrollment Form](docs/screenshots/enrollment-form.png)
 
 **Enrollment Form — Additional View**
 
-![Enrollment Form Additional View](docs/screenshot/enrollment-form1.png)
+![Enrollment Form Additional View](docs/screenshots/enrollment-form1.png)
 
 **Enrollment Form Before Submission**
 
-![Enrollment Form Before Submission](docs/screenshot/before-submission-enrollment-form.png)
+![Enrollment Form Before Submission](docs/screenshots/before-submission-enrollment-form.png)
 
 ### 6. Enrollment Email
 
 **Confirmed Enrollment Email**
 
-![Confirmed Enrollment Email](docs/screenshot/confirmed-enrollment-email.png)
+![Confirmed Enrollment Email](docs/screenshots/confirmed-enrollment-email.png)
 
 > **Screenshot privacy:** Before publishing the repository, ensure that screenshots do not expose real students' private information, personal contact details, or confidential enrollment records. Use dummy information or redact sensitive details.
 
