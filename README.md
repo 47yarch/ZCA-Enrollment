@@ -457,6 +457,21 @@ The selected grade label and attachment filename must match the mapping in the s
 - Add automated tests for the Flask route and Apps Script response handling.
 - Test accessibility and layouts on mobile, tablet, and desktop.
 - Evaluate a database solution when appropriate for future requirements and academic scope.
+ 
+---
+## Creator
+
+<div align="center">
+
+**Agustin, Jeshaiah D.**
+
+Bachelor of Science in Information Technology (BSIT)  
+First Year · Second Semester  
+
+**Technological University of the Philippines – Taguig Campus**
+
+</div>
+
 
 ---
 
